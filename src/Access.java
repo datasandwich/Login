@@ -24,7 +24,6 @@ public class Access {
         Scanner scan = new Scanner(System.in);
         System.out.println("New username");
         user.username = scan.nextLine();
-        //System.out.println();
         user.password = PasswordField.readPassword("Enter password: ");
         welcome(user);
     }
