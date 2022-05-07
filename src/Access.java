@@ -1,41 +1,35 @@
 
 import java.util.Scanner;
 // Maybe use an Array or ArrayList to store multiple username-password pairs
-
+// Create new class for user instantiation?
+// Create new class for user info storage?
 public class Access {
-    String[][] database = new String[15][15];
-    int i = 0;
-    int j = 0;
-    public void welcome(){
+    String username;
+    String password;
+    public static void welcome(Access user){
         Scanner scan = new Scanner(System.in);
         System.out.println("Choose an option:\nLogin\nRegister\nLeave");
         String input = scan.nextLine().toLowerCase();
         if (input.equals("login")){
-            login();
+            login(user);
         } else if (input.equals("register")) {
-            registration();
+            registration(user);
         } else {System.exit(0);}
     }
-    public void registration(){
-        User new_user = new User();
+    public static void registration(Access user){
         System.out.println("registration");
         Scanner scan = new Scanner(System.in);
         System.out.println("New username");
-        new_user.username = scan.nextLine();
+        user.username = scan.nextLine();
         System.out.println("New password");
-        new_user.password = scan.nextLine();
-        database[i][j] = new_user.username;
-        database[i][j+1] = new_user.password;
-        i++;
-        j++;
-        welcome();
+        user.password = scan.nextLine();
+        welcome(user);
     }
-    public void login(){
-
+    public static void login(Access user){
         // Declare scanner
         Scanner scan = new Scanner(System.in);
         // Declare correct credentials
-        //String username = "admin";
+        // String username = "admin";
         // String password = "Password123!";
         int i = 0;
         while (i < 3) {
@@ -52,15 +46,11 @@ public class Access {
                 passWord = scan.nextLine();
             }
             // Verifying credentials
-
-            //------------------------------// CHANGE DATABASE FROM ARRAY TO ARRAYLIST
-
-            if (database.contains(userName) && database.contains(passWord)) {
+            if (userName.equals(user.username) && passWord.equals(user.password)) {
                 i = 3;
                 System.out.println("Welcome back " + userName + "!");
-
-            //-----------------------------//
-
+                System.out.println("Time has passed.");
+                System.out.println("You've been logged out.");
             } else {
                 i++;
                 int attempts = 3-i;
@@ -71,14 +61,12 @@ public class Access {
                 }
             }
 
+            welcome(user);
         }
-        System.out.println("Time has passed.");
-        System.out.println("You've been logged out.");
-        welcome();
     }
     public static void main(String[] args) {
-        Access access = new Access();
-        access.welcome();
+        Access new_user = new Access();
+        welcome(new_user);
 
 
 
