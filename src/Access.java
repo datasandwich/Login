@@ -1,8 +1,11 @@
+/*
+Maybe use an Array or ArrayList to store multiple username-password pairs
+Create new class for user instantiation?
+Create new class for user info storage?
+*/
 
 import java.util.Scanner;
-// Maybe use an Array or ArrayList to store multiple username-password pairs
-// Create new class for user instantiation?
-// Create new class for user info storage?
+
 public class Access {
     String username;
     String password;
@@ -21,8 +24,8 @@ public class Access {
         Scanner scan = new Scanner(System.in);
         System.out.println("New username");
         user.username = scan.nextLine();
-        System.out.println("New password");
-        user.password = scan.nextLine();
+        //System.out.println();
+        user.password = PasswordField.readPassword("Enter password: ");
         welcome(user);
     }
     public static void login(Access user){
