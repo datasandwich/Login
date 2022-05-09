@@ -7,6 +7,10 @@ Create new class for user info storage?
 import java.util.Scanner;
 
 public class Access {
+    /* Use this code when testing new functions to increase efficiency. Allows you to skip registration.
+    String username = "admin";
+    String password = "Password123!";
+     */
     String username;
     String password;
     public static void welcome(Access user){
@@ -33,8 +37,7 @@ public class Access {
         // Declare scanner
         Scanner scan = new Scanner(System.in);
         // Declare correct credentials
-        // String username = "admin";
-        // String password = "Password123!";
+
         int i = 0;
         while (i < 3) {
             String userName = "";
@@ -73,7 +76,7 @@ public class Access {
         welcome(new_user);
 
 
-
+        System.out.println("La");
 
     }
 }
