@@ -15,8 +15,9 @@ class EraserThread implements Runnable {
         stop = true;
         while (stop) {
             System.out.print("\010*");
+
             try {
-                Thread.sleep(1);
+                Thread.sleep(100);
             } catch(InterruptedException ie) {
                 ie.printStackTrace();
             }

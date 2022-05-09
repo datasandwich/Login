@@ -22,9 +22,11 @@ public class Access {
     public static void registration(Access user){
         System.out.println("registration");
         Scanner scan = new Scanner(System.in);
-        System.out.println("New username");
+        System.out.println("New username: ");
         user.username = scan.nextLine();
-        user.password = PasswordField.readPassword("Enter password: ");
+        //user.password = PasswordField.readPassword("Enter password: ");
+        System.out.println("New password: ");
+        user.password = scan.nextLine();
         welcome(user);
     }
     public static void login(Access user){
