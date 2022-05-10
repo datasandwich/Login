@@ -30,7 +30,7 @@ public class Access {
         user.username = scan.nextLine();
         //user.password = PasswordField.readPassword("Enter password: ");
         System.out.println("New password: ");
-        user.password = scan.nextLine();
+        user.password = MaskPassword.main();
         welcome(user);
     }
     public static void login(Access user){
@@ -50,7 +50,7 @@ public class Access {
             // Password input
             while (passWord.equals("")) {
                 System.out.println("Enter password: ");
-                passWord = scan.nextLine();
+                passWord = MaskPassword.main();
             }
             // Verifying credentials
             if (userName.equals(user.username) && passWord.equals(user.password)) {

@@ -1,12 +1,22 @@
 import java.io.Console;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class MaskPassword {
-    public static void main(String[] args) {
-        Console console = System.console() ;
+    public static String main() {
+        Console cons;
 
-        char [] password = console.readPassword("Enter password: ");
-        System.out.println("Password was: " + Arrays.toString(password));
-        Arrays.fill(password,' ');
+        if((cons = System.console())!=null) {
+            char[] password = cons.readPassword("Enter password: ");
+            return Arrays.toString(password);
+
+
+
+        } else {
+            System.out.println("No console found...\nEnter password without masking: ");
+            Scanner scan = new Scanner(System.in);
+            return scan.nextLine();
+        }
+
     }
 }
