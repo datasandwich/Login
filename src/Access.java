@@ -12,15 +12,8 @@ public class Access {
      */
     String username;
     String password;
-
-
-
     public static void main(String[] args) {
         Access new_user = new Access();
         Welcome.main(new_user);
-
-
-        System.out.println("La");
-
     }
 }
