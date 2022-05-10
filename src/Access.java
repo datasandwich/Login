@@ -56,7 +56,7 @@ public class Access {
             if (userName.equals(user.username) && passWord.equals(user.password)) {
                 i = 3;
                 System.out.println("Welcome back " + userName + "!");
-                System.out.println("Time has passed.");
+                Quiz.main();
                 System.out.println("You've been logged out.");
             } else {
                 i++;
