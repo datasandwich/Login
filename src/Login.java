@@ -1,7 +1,8 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Login {
-    public static void main(Access user) {
+    public static void main() throws FileNotFoundException {
             // Declare scanner
             Scanner scan = new Scanner(System.in);
             // Declare correct credentials
@@ -21,7 +22,7 @@ public class Login {
                     passWord = MaskPassword.main();
                 }
                 // Verifying credentials
-                if (userName.equals(user.username) && passWord.equals(user.password)) {
+                if (userName.equals(Access.username) && passWord.equals(Access.password)) {
                     i = 3;
                     System.out.println("Welcome back " + userName + "!");
                     Quiz.main();
@@ -36,7 +37,7 @@ public class Login {
                     }
                 }
 
-                Welcome.main(user);
+                Welcome.main();
 
         }
     }

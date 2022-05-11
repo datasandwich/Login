@@ -1,4 +1,5 @@
 
+import java.io.File;
 import java.util.Scanner;
 /*
 This class creates an interactive quiz
@@ -29,9 +30,11 @@ public class Quiz {
 
         // Storing the questions and answers in a 2-dimensional array.
         String[][] questionsAndAnswers =
-                {{q1,a1_c,a1_w_1,a1_w_2,a1_w_3},
-                        {q2,a2_w_1,a2_c,a2_w_2,a2_w_3},
-                        {q3,a3_w_1,a3_w_2,a3_c,a3_w_3}};
+                {{q1, a1_c, a1_w_1, a1_w_2, a1_w_3},
+                        {q2, a2_w_1, a2_c, a2_w_2, a2_w_3},
+                        {q3, a3_w_1, a3_w_2, a3_c, a3_w_3}};
+
+        // Leaderboard
 
         int score = 0;
         int ans_index = 1;
@@ -54,19 +57,32 @@ public class Quiz {
                 }
                 Scanner scan = new Scanner(System.in);
                 String answer = scan.nextLine();
-                if (answer.equals(questionsAndAnswer[ans_index].toLowerCase())){
+                if (answer.equals(questionsAndAnswer[ans_index].toLowerCase())) {
                     System.out.println("Correct!");
                     score++;
                     ans = true;
-                } else if (answer.equals("")){
+                } else if (answer.equals("")) {
                     System.out.println("You need to enter something!");
-                } else{
+                } else {
                     System.out.println("Wrong!");
                     ans = true;
                 }
             }
             ans_index++;
+            }
+        File f = new File("leaderboard.txt");
+
+        if (f.exists()) {
+            System.out.println("Overwriting existing leaderboard...");
+            LeaderBoard.Overwrite(score);
         }
-        System.out.println("You scored "+score+" points!");
+        else {
+            System.out.println("You scored "+score+" points!");
+            System.out.println("Creating new leaderboard...");
+            LeaderBoard.New(score);
+        }
+
+
+
     }
 }

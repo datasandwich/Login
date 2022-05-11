@@ -2,19 +2,19 @@
 Maybe use an Array or ArrayList to store multiple username-password pairs
 Create new class for user instantiation?
 Create new class for user info storage?
+
+At the beginning of quiz list the 5 highest scoring users.
 */
 
 
+import java.io.FileNotFoundException;
+
 public class Access {
-    /* Use this code when testing new functions to increase efficiency. Allows you to skip registration.
-    String username = "admin";
-    String password = "Password123!";
-     */
-    String username;
-    String password;
-    public static void main(String[] args) {
-        Access new_user = new Access();
-        Welcome.main(new_user);
-        System.out.println("");
+
+    static String username;
+    static String password;
+    public static void main(String[] args) throws FileNotFoundException {
+        //Access new_user = new Access();
+        Welcome.main();
     }
 }
