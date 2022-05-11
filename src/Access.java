@@ -15,5 +15,6 @@ public class Access {
     public static void main(String[] args) {
         Access new_user = new Access();
         Welcome.main(new_user);
+        System.out.println("");
     }
 }
