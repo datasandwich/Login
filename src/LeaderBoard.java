@@ -32,7 +32,7 @@ public class LeaderBoard {
             }
             myReader.close();
 
-            leaderboard.add("\nUsername: "+Access.username+"\nScore: "+score);
+            leaderboard.add("\nUsername: "+Access.username+" | Score: "+score);
             FileWriter myWriter = new FileWriter("leaderboard.txt");
             myWriter.write(String.valueOf(leaderboard));
             //myWriter.write();
